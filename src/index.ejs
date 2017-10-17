@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>LJB Logo</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.flexParent {
+			display: flex;
+		}
+		.half {
+			flex: 0 0 50%;
+      border: 1px solid;
+			padding: 10px;
+		}
+		.codeSide {
+			display: flex;
+
+		}
+		.buttonContainer {
+			flex-grow: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#canvas {
+			border: 1px solid red;;
+
+		}
+		#code {
+			height: 400px;
+		}
+		#runButton {
+			box-sizing: border-box;
+		}
+	
+		.turtle {
+			position: absolute;
+			stroke: #c04af7;
+      fill: transparent;
+      overflow: visible;
+      height: 20px;
+      width: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="flexParent">
+	<div class="half codeSide">
+			<textarea name="code" id="code" cols="30" rows="10" class="half"></textarea>
+			<div class="buttonContainer">
+				<button id="runButton">Run</button>
+			</div>
+		</div>
+		<div class="half">
+			<canvas id="canvas" width="600" height="400"></canvas>
+
+			  <svg height="30" width="30" class="turtle" viewbox="0 0 30 30">
+				<polygon points="15,00 0,30 30,30" stroke-width="1" stroke-linejoin="round"></polygon>
+			</svg>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>code.innerText = "FD 100";</script>
+<script>runButton.addEventListener('click', window.run);</script>

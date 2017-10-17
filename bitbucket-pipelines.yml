@@ -1,0 +1,17 @@
+image: node:6.9.4
+
+pipelines:
+  master:
+    - step:
+        script:
+          - npm install
+          - npm build
+          - echo "done"
+  default:
+    - step:
+        caches:
+          - node
+        script:
+          - npm install
+          - npm build
+          - echo "Done"
